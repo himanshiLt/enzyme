@@ -1,15 +1,15 @@
 framework: mocha
 tier: large
-postMerge:
-  pattern: 
-    - "./packages/enzyme-test-suite/test/*.js"
-preMerge:
-  pattern:
-    - "./packages/enzyme-test-suite/test/*.js"
 preRun:
      command:
         - npm install
-        - sh install-relevant-react.sh 13
+        - npm run react 13
+preMerge:
+  pattern:
+    - "./packages/enzyme-test-suite/test/*.js"
+postMerge:
+  pattern: 
+    - "./packages/enzyme-test-suite/test/*.js"
 postRun:
      command:
         - node --version
