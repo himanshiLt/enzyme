@@ -3,7 +3,6 @@ tier: large
 preRun:
      command:
         - npm install
-        - npm run react
 preMerge:
   pattern:
     - "./packages/enzyme-test-suite/test/*.js"
