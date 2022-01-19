@@ -1,0 +1,2 @@
+recursive: 
+  - packages/enzyme-test-suite/build

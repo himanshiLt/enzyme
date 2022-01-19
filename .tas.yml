@@ -1,17 +1,18 @@
----
-framework: mocha                  # Mention the testing framework mocha or jest
+framework: mocha
+tier: large
 postMerge:
-    pattern:
-    - "./packages/enzyme-test-suite/test/*.jsx"
-    - "./packages/enzyme-test-suite/test/*.js"            # Glob pattern to path where tests that should run post-merge are written
+  pattern: 
+    - "./packages/enzyme-test-suite/test/*.js"
 preMerge:
-    pattern:
-    - "./packages/enzyme-test-suite/test/*.jsx"
-    - "./packages/enzyme-test-suite/test/*.js"               # Glob pattern to path where tests that should run pre-merge are written
+  pattern:
+    - "./packages/enzyme-test-suite/test/*.js"
 preRun:
-    - npm install                   # Mention pre-run steps here
-    - sh install-relevant-react.sh 13
+     command:
+        - npm install
+        - sh install-relevant-react.sh 13
 postRun:
-    - node --version                # Mention post-run steps here
-version: 2.0
+     command:
+        - node --version
+configFile: "mocharc.yml"
+version: 1.0
 
